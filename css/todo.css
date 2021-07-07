@@ -1,0 +1,84 @@
+body {
+  background-color: #f9f9f9;
+}
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+}
+form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 30px 40px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 400px;
+  max-width: 90%;
+}
+form.hide {
+  display: none;
+}
+form > label {
+  width: 100%;
+  line-height: 20px;
+}
+form > input {
+  width: 100%;
+  line-height: 40px;
+}
+form > button {
+  width: 44%;
+  line-height: 40px;
+  font-size: 24px;
+}
+
+.list {
+  display: grid;
+  width: 100%;
+  /* "max-width" padaro, jog atsizvelgiant i dabartini "grid-template-columns" elementu eileje butu ne daugiau 4 vienetu*/
+  max-width: calc(240px * 5 + 4 * 30px - 1px);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.list > .task {
+  background-color: #fff;
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px #0004;
+}
+
+.list > .task > .text {
+  font-size: 20px;
+}
+.list > .task > .actions {
+  opacity: 0;
+  margin-top: 10px;
+  font-size: 16px;
+}
+.list > .task:hover > .actions {
+  opacity: 1;
+}
+.task .btn {
+  float: left;
+  padding: 5px 15px;
+  margin-right: 20px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.task .btn.edit {
+  background-color: #36f;
+  color: #fff;
+}
+.task .btn.delete {
+  background-color: #f30;
+  color: #fff;
+}
